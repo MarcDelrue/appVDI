@@ -1,0 +1,67 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Recherche avancée</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item no-lines>
+    <ion-input class="searchInput" placeholder="Rechercher une société, un(e) conseiler(ère)" style="padding-left: 10px"></ion-input>
+  </ion-item>
+  <hr>
+  <ion-list radio-group [(ngModel)]="searchParams">
+  <ion-item no-lines>
+    <ion-label class="searchParams">Conseillers/ières</ion-label>
+    <ion-radio value="c"></ion-radio>
+  </ion-item>
+  <ion-item no-lines>
+    <ion-label class="searchParams">Portes ouvertes</ion-label>
+    <ion-radio value="po"></ion-radio>
+  </ion-item>
+</ion-list>
+<hr>
+  <ion-item no-lines>
+    <ion-select [(ngModel)]="searchAround" class="searchParams" style="max-width: 100% !important; margin: auto">
+      <ion-option *ngFor="let onebyone of departement; let i = index" value="{{onebyone}}">{{ onebyone }}</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-range *ngIf="searchAround == 'Autour de moi'" min="0" max="100" pin="true" name="size" step="5" [(ngModel)]="radius">
+    <ion-label style="width: 38vw;" class="searchParams" range-left >Rayon {{radius}} km :</ion-label>
+  </ion-range>
+  <ion-input *ngIf="searchAround=='Autre pays'" placeholder="Quel pays ?"></ion-input>
+  <hr>
+  <ion-item no-lines>
+    <button class="styledbutton" (click)="goToCategories()"><label class="searchParams">Catégories <ion-icon name="ios-arrow-forward" color="vdi"></ion-icon></label></button>
+  </ion-item>
+  <ion-item *ngIf="categories[0]" no-lines>
+    <ion-list class="searchParams" *ngFor="let test of categories">{{test}}</ion-list>
+  </ion-item>
+  <hr>
+  <ion-item no-lines>
+    <button class="styledbutton" (click)='goToSocieties()'><label class="searchParams">Sociétés <ion-icon name="ios-arrow-forward" color="vdi"></ion-icon></label></button>
+  </ion-item>
+  <ion-item *ngIf="categories[0] == 'Toutes les Catégories' && societies[1] == null && societies[0].name == 'Toutes les sociétés'" no-lines>
+    <ion-list class="searchParams">Toutes les Sociétés</ion-list>
+  </ion-item>
+  <div *ngIf="categories[0] == 'Toutes les Catégories' && societies[1] != null" no-lines>
+    <div *ngFor='let cat of allCategories'>
+      <label class="searchParams" *ngIf="cat != 'Toutes les Catégories'">{{ cat }}</label>
+        <ion-item *ngIf="societies[0]" no-lines>
+          <ion-list class="searchParams" style="color: #999" *ngFor="let test of societies"><span *ngIf="test.categorie == cat">{{test.name}}</span></ion-list>
+        </ion-item>
+    </div>
+  </div>
+  <div *ngIf="categories[0] != 'Toutes les Catégories'">
+    <div *ngFor='let cat of categories'>
+      <label class="searchParams" *ngIf="cat != 'Toutes les Catégories'">{{ cat }}</label>
+          <ion-list style="color: #999" *ngFor="let test of societies"><span *ngIf="test.categorie == cat">{{test.name}}</span></ion-list>
+    </div>
+  </div>
+  <hr>
+  <div class="text-on-center">
+    <button ion-button class="searchbutton">Lancer la recherche</button>
+  </div>
+</ion-content>

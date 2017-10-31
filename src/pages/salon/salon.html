@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Salons
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card padding *ngFor='let test of all'>
+    <div class="threebutton">
+    <div style="text-align: left">
+      <ion-icon name="ios-pin"></ion-icon>
+      <label>62 Tilques</label>
+    </div>
+    <div style="text-align: right">
+      <ion-icon name="md-calendar"></ion-icon>
+      <label>03/09/17</label>
+    </div>
+  </div>
+  <img *ngIf='showbanner' src='assets/img/selfie.jpg'>
+  <hr>
+  <div class="row threebutton">
+      <button ion-fab class="invitbutton" (click)='showbanner = !showbanner'><ion-icon name="ios-information" style="font-size: 40px"></ion-icon></button>
+      <button ion-fab class="invitbutton" (click)='switchFavo()'><ion-icon name={{isFavo}}></ion-icon></button>
+  </div>
+  </ion-card>
+</ion-content>

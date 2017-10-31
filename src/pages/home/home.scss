@@ -1,0 +1,52 @@
+.toolbar-background {
+  background-image: url('../assets/img/fond_header.jpg');
+  background-size: cover;
+}
+
+.searchInput{
+  background-color: #FFF;
+  border: 2px solid #753F63;
+  border-radius: 5px;
+}
+
+.loading {
+  position: fixed; /* or absolute */
+  top: 50%;
+  left: 50%;
+  margin-top: -68px;
+  margin-left: -68px;
+}
+
+.searchFilter {
+  background: #FFF;
+  position: absolute;
+  right: 0;
+  border: 2px solid #753F63;
+  color:  #753F63;
+  border-radius: 5px;
+  margin-right: 20px;
+  padding: 5px 10px 5px 10px;
+}
+
+.imgthumbnail {
+  display: block;
+  margin: auto;
+  border-radius: 75px;
+  height: 60px;
+  width: 60px;
+}
+
+.boi {
+  border-left: 5px solid #5b9bd5;
+  border-top: 2px solid #753F63;
+}
+
+.gurl {
+  border-left: 5px solid #b12f82;
+  border-top: 2px solid #753F63;
+}
+
+.centertable {
+   display: flex;
+   align-items: center;
+}

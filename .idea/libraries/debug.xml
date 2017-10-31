@@ -1,0 +1,25 @@
+<component name="libraryTable">
+  <library name="debug">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/platforms/android/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-gass-11.0.4_4a486ad52bf9eaaa7c72b41eac46a6476c4976cc.jar!/" />
+      <root url="jar://$PROJECT_DIR$/platforms/android/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-basement-11.0.4_4ab72ca4beb685ab4b635978c53033c3b414f01f.jar!/" />
+      <root url="jar://$PROJECT_DIR$/platforms/android/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-clearcut-11.0.4_9547bf6da82fb7ec9c206a753602ffb8ae121a02.jar!/" />
+      <root url="jar://$PROJECT_DIR$/platforms/android/build/intermediates/pre-dexed/debug/com.android.support-support-v4-25.2.0_d3d33c36847929ad9685ed32cc7d968342303ff3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/platforms/android/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-tasks-11.0.4_7142be2e846fdeec091fabd441788091b6f7d358.jar!/" />
+      <root url="jar://$PROJECT_DIR$/platforms/android/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-25.2.0_449ce1ba2431da20264435dd9725c03bc2df0cd9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/platforms/android/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-25.2.0_f97661ef5d5500a77cb80a2dbfd59d8e49a4b985.jar!/" />
+      <root url="jar://$PROJECT_DIR$/platforms/android/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-ads-lite-11.0.4_62472f010fb13b35b8f150dc1a51adef96a25d73.jar!/" />
+      <root url="jar://$PROJECT_DIR$/platforms/android/build/intermediates/pre-dexed/debug/debug_00776ca203d128442dd26a7b118e7cb056d240d8.jar!/" />
+      <root url="jar://$PROJECT_DIR$/platforms/android/build/intermediates/pre-dexed/debug/CordovaLib-6.2.3-debug_d26dbb300608efd3eabcfc95a14b4a06290ef4e6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/platforms/android/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-ads-11.0.4_043f32c015c53a58e62e86c137788b193f92df92.jar!/" />
+      <root url="jar://$PROJECT_DIR$/platforms/android/build/intermediates/pre-dexed/debug/support-annotations-25.2.0_4b45c8a33998eacd7435a81e322b376b925bac0c.jar!/" />
+      <root url="jar://$PROJECT_DIR$/platforms/android/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-safetynet-11.0.4_04c4794de164fa14af1be63b6a87599c79156367.jar!/" />
+      <root url="jar://$PROJECT_DIR$/platforms/android/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-25.2.0_19d8873c342cd1193a55cb6a105d86bef6ca2125.jar!/" />
+      <root url="jar://$PROJECT_DIR$/platforms/android/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-25.2.0_0b9f1e81a74de30107041379a804e926a1029597.jar!/" />
+      <root url="jar://$PROJECT_DIR$/platforms/android/build/intermediates/pre-dexed/debug/com.android.support-support-compat-25.2.0_49c70cb39d270edafa09724ea81617a39636ecab.jar!/" />
+      <root url="jar://$PROJECT_DIR$/platforms/android/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-base-11.0.4_44d0e33395147255a38ff3a331b8a6e4c48aad52.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

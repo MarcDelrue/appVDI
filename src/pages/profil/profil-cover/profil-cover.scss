@@ -1,0 +1,53 @@
+.profilPic {
+  display: block;
+  margin: auto;
+  height: 150px;
+  width: 150px;
+  border-radius: 75px;
+}
+
+.text-on-center {
+  text-align: center;
+}
+
+.profil-interraction {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.no-background {
+  background-color: rgba(0,0,0,0);
+}
+
+.favorite {
+  color: #753F63;
+  font-size: 30px;
+}
+
+.disp-block  {
+  display: block;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 3px solid #753F63;
+    margin: 1em 0;
+    padding: 0;
+}
+
+.float-column {
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.deeplinks {
+// //  position: absolute;
+//   float: left;
+//   clear: fixed;
+  font-size: 20px;
+  color: #753F63;
+}

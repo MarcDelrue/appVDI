@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Sélectionné une/des catégorie(s)</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-list no-lines>
+    <ion-item *ngFor="let categorie of categories">
+      <ion-label class="searchParams">{{ categorie.name }}</ion-label>
+      <ion-checkbox (ngModelChange)="updateCategories($event, categorie.name)" [(ngModel)]="categorie.checked"></ion-checkbox>
+    </ion-item>
+</ion-list>
+<hr>
+<div class="text-on-center">
+  <button ion-button class="searchbutton" (click)="goBack()">Confirmer</button>
+</div>
+</ion-content>

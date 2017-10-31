@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <div class="centertable">
+      <ion-input class="searchInput" placeholder="Rechercher une société, un(e) conseiler(ère)" style="padding-left: 10px" [(ngModel)]="filter"></ion-input>
+      <button class="searchFilter" (click)="advancedsearch()">Filtre</button>
+    </div>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <label>{{ vdilist?.length }} conseillers(ères) localisés: </label>
+  <table style="margin: auto; font-weight: bold">
+  <tr *ngFor="let vdi of vdilist | spipe: filter" class="row" (click)="goToProfil(vdi)" [ngClass]="{'boi': vdi.gender == 'Male', 'gurl': vdi.gender == 'Female'}">
+    <td style="width: 20vw;" class="centertable">
+      <img class="imgthumbnail" src="assets/img/selfie.jpg">
+    </td>
+    <td style="width: 18vw; font-size: 18px" class="centertable">
+      <div class="searchParams">
+        {{ vdi.first_name }}
+      </div>
+    </td>
+    <td style="width: 50vw; padding-top: 10px;" class="centertable">
+      <ul>
+        <div class="searchParams" style="font-size: 13px">{{ vdi.categories }}</div>
+        <div class="searchParams" style="font-size: 13px; padding-left: 13px;">{{ vdi.enterprise }}</div>
+        <div class="searchParams" style="font-size: 13px; padding-left: 26px;">{{ vdi.city }}</div>
+      </ul>
+    </td>
+    <td style="width: 10vw;" class="centertable">
+      <ion-icon name="ios-arrow-forward" color="vdi" style="font-size: 20px"></ion-icon>
+    </td>
+  </tr>
+  </table>
+</ion-content>
+<img src="assets/img/Wedges.gif" class="loading" *ngIf="loading">

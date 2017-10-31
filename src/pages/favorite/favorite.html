@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Favoris
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-item *ngFor="let d of typeFavorite; let i = index" text-wrap [ngClass]="{active: isGroupShown(i)}">
+      <button ion-button full class="no-background" (click)="toggleGroup(i)"><label class="searchParams">{{d.title}} <ion-icon color="vdi" item-right [name]="isGroupShown(i) ? 'ios-arrow-up' : 'ios-arrow-down'"></ion-icon></label></button>
+      <p *ngFor="let x of d.list">
+        <span *ngIf="isGroupShown(i)" class="threebutton">
+          <label color='vdi'>{{x.name}}</label>
+          <label color='vdi'>{{x.date}}</label>
+        </span>
+      </p>
+    </ion-item>
+</ion-content>

@@ -1,0 +1,26 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Choisissez une/des société(s)</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list no-lines>
+    <ion-card *ngFor="let categorie of categories">
+      <label padding class="searchParams">{{ categorie }}</label><ion-checkbox style="float: right; padding: 5px 15px 0 0;" (ionChange)="addAllCategorie(categorie, $event.checked)"></ion-checkbox>
+      <div *ngFor="let society of societies">
+      <ion-item *ngIf="society.categorie == categorie">
+        <ion-label class="searchParams">{{ society.name }}</ion-label>
+        <ion-checkbox (ngModelChange)="updateSocieties($event, society)" [(ngModel)]="society.checked"></ion-checkbox>
+      </ion-item>
+    </div>
+    </ion-card>
+</ion-list>
+<hr>
+<div class="text-on-center">
+  <button ion-button class="searchbutton" (click)="goBack()">Confirmer</button>
+</div>
+</ion-content>

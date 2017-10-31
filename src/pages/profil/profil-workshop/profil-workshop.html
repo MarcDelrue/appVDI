@@ -1,0 +1,49 @@
+<div class="card" padding *ngFor="let test of for">
+  <div class="container">
+    <h4 style="color: #753F63;"><b>Porte ouverte</b></h4>
+      <div class="threebutton">
+        <div>
+          <ion-icon name="md-calendar" style="margin-right: 10px"></ion-icon>
+          <label>28-07-17</label>
+        </div>
+        <div>
+          <ion-icon name="md-time"></ion-icon>
+          <label>15h00</label>
+        </div>
+      </div>
+      <div style="width: 100%; text-align: left">
+        <ion-icon name="md-pin" style="margin-right: 13px"></ion-icon>
+        <label>92 RD 943 Tilques 62500</label>
+      </div>
+      <div *ngIf="showDesc" class="animatest">
+        <hr>
+        <label>Description:</label>
+        <p>
+          Venez ça sera bien
+        </p>
+        <hr>
+          <div class="text-on-center">
+            <label>s'inscrire</label>
+            </div>
+          <ion-item>
+            <ion-label left class="searchParams label_left" style="font-size: 15px;" floating>Prénom</ion-label>
+            <ion-input></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label left class="searchParams label_left" style="font-size: 15px;" floating>Téléphone</ion-label>
+            <ion-input></ion-input>
+          </ion-item>
+          <div padding class="text-on-center">
+          <button class="styledbutton"><label>Envoyer <ion-icon name="ios-arrow-forward" color="vdi"></ion-icon></label></button>
+          </div>
+      </div>
+      <!-- <div class="text-on-center" style="margin: 30px 0 0 0">
+      <button class="styledbutton" (click)="goToInvitation()"><label>Je demande une invitation <ion-icon name="ios-arrow-forward" color="vdi"></ion-icon></label></button>
+      </div> -->
+      <hr>
+      <div class="row threebutton">
+          <button ion-fab class="invitbutton" (click)="showDesc = !showDesc"><ion-icon name="ios-information" style="font-size: 40px"></ion-icon></button>
+          <button ion-fab class="invitbutton" (click)="switchFavo()"><ion-icon name={{isFavo}}></ion-icon></button>
+      </div>
+  </div>
+</div>

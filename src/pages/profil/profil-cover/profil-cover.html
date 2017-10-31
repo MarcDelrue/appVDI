@@ -1,0 +1,28 @@
+<div class="text-on-center" style="margin: 15px 0 30px 0">
+<button class="styledbutton"><label>Boutique en ligne <ion-icon name="ios-arrow-forward" color="vdi"></ion-icon></label></button>
+</div>
+<ion-row padding>
+<!-- <div class="float-column">
+  <a class="deeplinks" href="https://www.facebook.com/marc.delrue.9"><ion-icon name="logo-facebook"></ion-icon></a>
+  <a class="deeplinks" href="https://twitter.com/oui"><ion-icon name="logo-twitter"></ion-icon></a>
+  <a class="deeplinks" href="https://www.instagram.com/test/"><ion-icon name="logo-instagram"></ion-icon></a>
+  <a class="deeplinks" ><ion-icon name="logo-pinterest"></ion-icon></a>
+</div> -->
+  <img class="profilPic" src="assets/img/selfie.jpg">
+</ion-row>
+<div class="text-on-center">
+  <label>
+    Prénom Nom
+  </label>
+</div>
+<p>
+Bonjour, je vous propose de découvrir mon
+univers de soins et beauté ! Produits de qualité
+100% naturel et bio !
+</p>
+<hr>
+<div class="row threebutton">
+    <button ion-fab class="invitbutton" (click)='contact()'><ion-icon name="md-mail"></ion-icon></button>
+    <button ion-fab class="invitbutton" (click)='switchFavo()'><ion-icon name={{isFavo}}></ion-icon></button>
+    <button ion-fab class="invitbutton" (click)='ee'><ion-icon name="md-share"></ion-icon></button>
+</div>

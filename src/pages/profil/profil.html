@@ -1,0 +1,60 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Profil</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content padding>
+  <ion-segment [(ngModel)]="apps">
+    <ion-segment-button value="P">
+      Profil
+    </ion-segment-button>
+    <ion-segment-button value="A">
+      Porte ouverte
+    </ion-segment-button>
+    <ion-segment-button value="G">
+      Galerie
+    </ion-segment-button>
+    <ion-segment-button value="E">
+      Emploi
+    </ion-segment-button>
+  </ion-segment>
+  <page-profil-cover *ngIf="apps == 'P'"></page-profil-cover>
+  <page-profil-workshop *ngIf="apps == 'A'"></page-profil-workshop>
+  <page-profil-photos *ngIf="apps == 'G'"></page-profil-photos>
+  <page-profil-jobs *ngIf="apps == 'E'"></page-profil-jobs>
+      <!-- <button ion-fab (click)='contact()'>
+          <ion-icon name="md-mail"></ion-icon>
+      </button>
+      <button ion-fab>
+          <ion-icon name="md-share"></ion-icon>
+      </button>
+      <button ion-fab (click)="switchFavo()">
+          <ion-icon name={{isFavo}}></ion-icon>
+      </button> -->
+  <!-- <ion-fab right middle>
+    <button ion-fab color="vdi"><ion-icon name="add"></ion-icon></button>
+    <ion-fab-list side="top">
+      <button ion-fab color="vdi" (click)='contact()'><ion-icon name="md-mail"></ion-icon></button>
+    </ion-fab-list>
+    <ion-fab-list side="bottom">
+      <ion-fab>
+        <button mini ion-fab color="vdi"><ion-icon name="md-share"></ion-icon></button>
+        <ion-fab-list side="left">
+          <button ion-fab color="vdi"><ion-icon name="logo-facebook"></ion-icon></button>
+          <button ion-fab color="vdi"><ion-icon name="logo-twitter"></ion-icon></button>
+          <button ion-fab color="vdi"><ion-icon name="logo-instagram"></ion-icon></button>
+          <button ion-fab color="vdi"><ion-icon name="logo-googleplus"></ion-icon></button>
+        </ion-fab-list>
+        <ion-fab-list side="bottom">
+          <button ion-fab color="vdi"><ion-icon name="ios-chatboxes"></ion-icon></button>
+          <button ion-fab color="vdi"><img class="icon icons8-Facebook-Messenger-Filled" width="25" height="25" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAADW0lEQVRoQ92a61EUQRDHuyNQIhAz0AiUCMQIOCKQDNQMIAIhAiECIQI1AjECMYK2/ls968ze7E7PY2Huumo/UOw8ftOP6e49pj0R3hMOagYiIodE9IaIXumDv/H4ck9EeH7oc8fM+LtaqkB08++IaKObL9kQoC6J6KYGqghEAT4qQMnm58YA6HMJUBaIiDwnog9E9Knl7iNzYf4LZn6wrmMGERHY/teI3VvXyn0PvvOemWF6STGBiAh84EtytnVeOGVmmNyiJEGeGMJtPgmzCNIJhAlmFkREjtUnUlp9zP/DZ65jC0ZBNLx+JyJEqZ4EUex1LDzPgXwjorc9EXh7uWXmo+netkA684u5s9xy/hjIr0e8K0qVfs/ML/3BAciOaCMaxaYgPfvGVHuBr4wgmkf9KdX1E407cPmYD9IyDfmrUe+MiE4KIO+ISAyRc3R6H+RcM9uCdYMhA4RL9kQEeZIV5icRAR4FmSW3Q4aM9/9XiCJyqxVeDUgA4SYywGDcGZLDzICDCnO473yNwD9qbvIoRAIGY2AJ57D1TAhM/cDMB1MQ2GSNzOZBMzBXKNBcuqH1DtKiLGHmQRm+RmpAkmm2B4Pq79ovmBQCoT/bIlqCBBAaxk+Y+cJytDUQgyYiGkFm+cyyuPfOFAINCUQRnOwlM58uzafQSImyNaHz/mbmoeXkm1Zu1BohRAThFSYz7WPNmpxCwJzQCyiVaNTKuUeumHkjIgh90MJSyr8F0wgC8NF7xHqzD9FGATDGIlMTRHSq0YRbc4yUubnWDRFhE84PLBDBoiKCG9t6AKn5t3MtjEjc7q5ZVuqYGA8/RC+ghaDFOs61y/VIcAHHKkR0+F60OLIV5xjDrltjV2v2I2aGmY4y10XJvVNWPPytqQPfmNWIOj0uNjSPc2/6tYGQLR/GuvS71mlEcy7and//3q+zkYJiZw3zSpYJyc8K6jPW9KU1BHzieBqhYouYQBSmpvAqAUQnZWP9ntgjCLSAEhjZuFl6AgkaEWYCfbEHEGTU+HiDOt78FXcK2goENQpMAZkxiizUGi5LdlWj+4WD+/UDerdBmpGrhWSKEptQRGLODoeEPTfbUClMqUa6AVjMtRY0MvRme9BAjY8gpic/3JeaRu04s2nVLrT2+H/IUXNCHvp2FAAAAABJRU5ErkJggg=="></button>
+        </ion-fab-list>
+      </ion-fab>
+    </ion-fab-list>
+    <ion-fab-list side="left">
+      <button ion-fab color="vdi" (click)="switchFavo()"><ion-icon name={{isFavo}}></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab> -->
+</ion-content>

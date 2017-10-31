@@ -1,0 +1,11 @@
+<ion-slides pager style="background-image: url('assets/img/thumbnail.jpg'); background-size: cover; height: 76vh;">
+  <ion-slide *ngFor="let image of images">
+    <img src="{{image}}">
+  </ion-slide>
+</ion-slides>
+<hr>
+<div class="row threebutton">
+    <button ion-fab class="invitbutton" (click)='contact()'><ion-icon name="md-mail"></ion-icon></button>
+    <button ion-fab class="invitbutton" (click)='switchFavo()'><ion-icon name={{isFavo}}></ion-icon></button>
+    <button ion-fab class="invitbutton" (click)='ee'><ion-icon name="md-share"></ion-icon></button>
+</div>

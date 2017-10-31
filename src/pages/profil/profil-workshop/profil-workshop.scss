@@ -1,0 +1,28 @@
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+    padding: 16px 16px;
+}
+
+.invitbutton {
+    background: rgba(0,0,0,0);
+    border: 2px solid #753F63;
+    color: #753F63;
+}
+
+.invitbutton:active {
+  background: rgba(117, 63, 99, 0.8);
+}
+
+.threebutton{
+  display: flex;
+  justify-content: space-between;
+}
+
+.animatest {
+  animation-duration: 3s;
+  animation-name: slidein;
+  animation-iteration-count: infinite;
+}
