@@ -10,7 +10,7 @@
 <ion-content padding>
   <ion-list no-lines>
     <ion-card *ngFor="let categorie of categories">
-      <label padding class="searchParams">{{ categorie }}</label><ion-checkbox style="float: right; padding: 5px 15px 0 0;" (ionChange)="addAllCategorie(categorie, $event.checked)"></ion-checkbox>
+      <label padding class="searchParams">{{ categorie.name }}</label><ion-checkbox style="float: right; padding: 5px 15px 0 0;" (ionChange)="addAllCategorie(categorie, $event.checked)"></ion-checkbox>
       <div *ngFor="let society of societies">
       <ion-item *ngIf="society.categorie == categorie">
         <ion-label class="searchParams">{{ society.name }}</ion-label>

@@ -7,15 +7,18 @@ import { HaversineService, GeoCoord } from "ng2-haversine";
 import { ProfilPage } from "../profil/profil";
 import { AdvancedsearchPage } from "./advancedsearch/advancedsearch";
 import { AdMobFree, AdMobFreeBannerConfig } from '@ionic-native/admob-free';
+import { Datastore } from '../../services/datastore.service';
+import { User, Company, Category, Event} from '../../models/reseauvdiModels.model';
 
 @Component({
   selector: 'page-home',
-  templateUrl: 'home.html'
+  templateUrl: 'home.html',
+  providers: [Datastore]
 })
 export class HomePage {
 
   loading : boolean = true;
-  constructor(public navCtrl: NavController, private geolocation: Geolocation, private _haversineService: HaversineService, private navParams: NavParams, private alertCtrl: AlertController, private admobFree: AdMobFree) {
+  constructor(public navCtrl: NavController, private geolocation: Geolocation, private _haversineService: HaversineService, private navParams: NavParams, private alertCtrl: AlertController, private admobFree: AdMobFree, private datastore: Datastore) {
   }
 
 
@@ -42,6 +45,10 @@ export class HomePage {
 
   ngOnInit()
   {
+    this.datastore.findAll(User, {include: 'companies'}).subscribe(data=>{
+      console.log(data.getModels());
+      this.vdilist = (data.getModels());
+    });
     this.createAd();
     this.geolocation.getCurrentPosition().then((resp) => {
       //this.calculateDist(resp.coords.latitude, resp.coords.longitude);

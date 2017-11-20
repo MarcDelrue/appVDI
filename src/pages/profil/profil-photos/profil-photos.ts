@@ -8,7 +8,7 @@ import { ProfilInvitationPage } from '../profil-invitation/profil-invitation';
 })
 
 export class ProfilPhotosPage {
-  images = ["assets/img/selfie.jpg", "assets/img/selfie.jpg", "assets/img/selfie.jpg", "assets/img/selfie.jpg", "assets/img/selfie.jpg"];
+  images = ["assets/img/tour.jpeg", "assets/img/tour.jpeg", "assets/img/tour.jpeg", "assets/img/selfie.jpg", "assets/img/selfie.jpg"];
   isFavo ="md-heart-outline";
   constructor(public navCtrl: NavController, public navParams: NavParams, private alertCtrl: AlertController) {
   }

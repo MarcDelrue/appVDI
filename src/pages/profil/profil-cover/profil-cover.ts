@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { Deeplinks } from '@ionic-native/deeplinks';
 import { ProfilInvitationPage } from '../profil-invitation/profil-invitation';
+import { SocialSharing } from '@ionic-native/social-sharing';
 
 @Component({
   selector: 'page-profil-cover',
@@ -10,7 +11,7 @@ import { ProfilInvitationPage } from '../profil-invitation/profil-invitation';
 export class ProfilCoverPage {
 
   isFavo = "md-heart-outline"
-  constructor(public navCtrl: NavController, public navParams: NavParams, private deeplinks: Deeplinks, private alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private deeplinks: Deeplinks, private alertCtrl: AlertController, private socialSharing: SocialSharing) {
   }
 
   goToInvitation(reason){
@@ -23,6 +24,16 @@ export class ProfilCoverPage {
     else
       this.isFavo = "md-heart-outline";
   }
+
+  shareItem(item) {
+  // this code is to use the social sharing plugin
+  // message, subject, file, url
+  this.socialSharing.share("Check this item:  reseauvdi://reseauvdi.com/vdi/" + item.id)
+  .then(() => {
+  })
+  .catch(() => {
+  });
+}
 
   public contact() {
     let alert = this.alertCtrl.create();

@@ -7,7 +7,7 @@
   <ion-list no-lines>
     <ion-item *ngFor="let categorie of categories">
       <ion-label class="searchParams">{{ categorie.name }}</ion-label>
-      <ion-checkbox (ngModelChange)="updateCategories($event, categorie.name)" [(ngModel)]="categorie.checked"></ion-checkbox>
+      <ion-checkbox (ngModelChange)="updateCategories($event, categorie)" [(ngModel)]="categorie.checked"></ion-checkbox>
     </ion-item>
 </ion-list>
 <hr>
@@ -15,3 +15,4 @@
   <button ion-button class="searchbutton" (click)="goBack()">Confirmer</button>
 </div>
 </ion-content>
+<img src="assets/img/Wedges.gif" class="loading" *ngIf="loading">

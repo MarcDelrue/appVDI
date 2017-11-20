@@ -5,7 +5,10 @@ import { MyApp } from './app.component';
 import { Geolocation } from '@ionic-native/geolocation';
 import { Deeplinks } from '@ionic-native/deeplinks';
 import { HaversineService } from "ng2-haversine";
+import { UniqueDeviceID } from '@ionic-native/unique-device-id';
 import { AdMobFree, AdMobFreeBannerConfig } from '@ionic-native/admob-free';
+import { SocialSharing } from '@ionic-native/social-sharing';
+import { JsonApiModule } from 'angular2-jsonapi';
 
 import { SalonPage } from '../pages/salon/salon';
 import { FavoritePage } from '../pages/favorite/favorite';
@@ -21,6 +24,7 @@ import { AdvancedsearchPage } from '../pages/home/advancedsearch/advancedsearch'
 import { CategoriesPage } from '../pages/home/advancedsearch/categories/categories';
 import { SocietiesPage } from '../pages/home/advancedsearch/societies/societies';
 
+import { Datastore } from '../services/datastore.service';
 import { SearchPipe } from './pipe/search.pipe';
 import { ArraySortPipe } from './pipe/orderBy';
 
@@ -47,6 +51,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SocietiesPage
   ],
   imports: [
+    JsonApiModule,
     BrowserModule,
     IonicModule.forRoot(MyApp)
   ],
@@ -68,12 +73,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SocietiesPage
   ],
   providers: [
+    Datastore,
     StatusBar,
+    SocialSharing,
     SplashScreen,
     Geolocation,
     Deeplinks,
     HaversineService,
     AdMobFree,
+    UniqueDeviceID,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
   ]
 })

@@ -37,26 +37,26 @@
     <button class="styledbutton" (click)="goToCategories()"><label class="searchParams">Catégories <ion-icon name="ios-arrow-forward" color="vdi"></ion-icon></label></button>
   </ion-item>
   <ion-item *ngIf="categories[0]" no-lines>
-    <ion-list class="searchParams" *ngFor="let test of categories">{{test}}</ion-list>
+    <ion-list class="searchParams" *ngFor="let test of categories">{{test.name}}</ion-list>
   </ion-item>
   <hr>
   <ion-item no-lines>
     <button class="styledbutton" (click)='goToSocieties()'><label class="searchParams">Sociétés <ion-icon name="ios-arrow-forward" color="vdi"></ion-icon></label></button>
   </ion-item>
-  <ion-item *ngIf="categories[0] == 'Toutes les Catégories' && societies[1] == null && societies[0].name == 'Toutes les sociétés'" no-lines>
+  <ion-item *ngIf="categories[0].name == 'Toutes les Catégories' && societies[1] == null && societies[0].name == 'Toutes les sociétés'" no-lines>
     <ion-list class="searchParams">Toutes les Sociétés</ion-list>
   </ion-item>
-  <div *ngIf="categories[0] == 'Toutes les Catégories' && societies[1] != null" no-lines>
+  <div *ngIf="categories[0].names == 'Toutes les Catégories' && societies[1] != null" no-lines>
     <div *ngFor='let cat of allCategories'>
-      <label class="searchParams" *ngIf="cat != 'Toutes les Catégories'">{{ cat }}</label>
+      <label class="searchParams" *ngIf="cat != 'Toutes les Catégories'">{{ cat.name }}</label>
         <ion-item *ngIf="societies[0]" no-lines>
           <ion-list class="searchParams" style="color: #999" *ngFor="let test of societies"><span *ngIf="test.categorie == cat">{{test.name}}</span></ion-list>
         </ion-item>
     </div>
   </div>
-  <div *ngIf="categories[0] != 'Toutes les Catégories'">
+  <div *ngIf="categories[0].name != 'Toutes les Catégories'">
     <div *ngFor='let cat of categories'>
-      <label class="searchParams" *ngIf="cat != 'Toutes les Catégories'">{{ cat }}</label>
+      <label class="searchParams" *ngIf="cat != 'Toutes les Catégories'">{{ cat.name }}</label>
           <ion-list style="color: #999" *ngFor="let test of societies"><span *ngIf="test.categorie == cat">{{test.name}}</span></ion-list>
     </div>
   </div>

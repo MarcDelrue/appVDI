@@ -12,13 +12,13 @@
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="facebook" />
+                <data android:scheme="reseauvdi" />
             </intent-filter>
             <intent-filter android:autoVerify="true">
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:host="facebook.com" android:pathPrefix="/" android:scheme="https" />
+                <data android:host="reseauvdi.com" android:pathPrefix="/" android:scheme="https" />
                 <data android:host=" " android:pathPrefix="/" android:scheme=" " />
                 <data android:host=" " android:pathPrefix="/" android:scheme=" " />
                 <data android:host=" " android:pathPrefix="/" android:scheme=" " />
@@ -26,10 +26,15 @@
             </intent-filter>
         </activity>
         <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" android:name="com.google.android.gms.ads.AdActivity" android:theme="@android:style/Theme.Translucent" />
+        <provider android:authorities="${applicationId}.sharing.provider" android:exported="false" android:grantUriPermissions="true" android:name="nl.xservices.plugins.FileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/sharing_paths" />
+        </provider>
     </application>
     <uses-sdk android:minSdkVersion="16" android:targetSdkVersion="25" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-feature android:name="android.hardware.location.gps" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 </manifest>

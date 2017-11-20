@@ -15,15 +15,6 @@ module.exports = [
         "runs": true
     },
     {
-        "id": "ionic-plugin-deeplinks.deeplink",
-        "file": "plugins/ionic-plugin-deeplinks/www/deeplink.js",
-        "pluginId": "ionic-plugin-deeplinks",
-        "clobbers": [
-            "IonicDeeplink"
-        ],
-        "runs": true
-    },
-    {
         "id": "cordova-plugin-device.device",
         "file": "plugins/cordova-plugin-device/www/device.js",
         "pluginId": "cordova-plugin-device",
@@ -76,6 +67,37 @@ module.exports = [
             "AdMob",
             "plugins.AdMob"
         ]
+    },
+    {
+        "id": "cordova-plugin-uniquedeviceid.UniqueDeviceID",
+        "file": "plugins/cordova-plugin-uniquedeviceid/www/uniqueid.js",
+        "pluginId": "cordova-plugin-uniquedeviceid",
+        "merges": [
+            "window.plugins.uniqueDeviceID"
+        ]
+    },
+    {
+        "id": "ionic-plugin-deeplinks.deeplink",
+        "file": "plugins/ionic-plugin-deeplinks/www/deeplink.js",
+        "pluginId": "ionic-plugin-deeplinks",
+        "clobbers": [
+            "IonicDeeplink"
+        ],
+        "runs": true
+    },
+    {
+        "id": "es6-promise-plugin.Promise",
+        "file": "plugins/es6-promise-plugin/www/promise.js",
+        "pluginId": "es6-promise-plugin",
+        "runs": true
+    },
+    {
+        "id": "cordova-plugin-x-socialsharing.SocialSharing",
+        "file": "plugins/cordova-plugin-x-socialsharing/www/SocialSharing.js",
+        "pluginId": "cordova-plugin-x-socialsharing",
+        "clobbers": [
+            "window.plugins.socialsharing"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -83,7 +105,6 @@ module.exports.metadata =
 {
     "cordova-plugin-compat": "1.2.0",
     "cordova-plugin-geolocation": "2.4.3",
-    "ionic-plugin-deeplinks": "1.0.15",
     "cordova-plugin-device": "1.1.4",
     "cordova-plugin-splashscreen": "4.0.3",
     "cordova-plugin-statusbar": "2.2.2",
@@ -91,7 +112,11 @@ module.exports.metadata =
     "ionic-plugin-keyboard": "2.2.1",
     "cordova-promise-polyfill": "0.0.2",
     "cordova-admob-sdk": "0.11.1",
-    "cordova-plugin-admob-free": "0.11.0"
+    "cordova-plugin-admob-free": "0.11.0",
+    "cordova-plugin-uniquedeviceid": "1.3.2",
+    "ionic-plugin-deeplinks": "1.0.15",
+    "es6-promise-plugin": "4.1.0",
+    "cordova-plugin-x-socialsharing": "5.2.1"
 };
 // BOTTOM OF METADATA
 });

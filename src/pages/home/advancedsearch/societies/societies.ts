@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Datastore } from '../../../../services/datastore.service';
+import { Company, Category } from '../../../../models/reseauvdiModels.model';
+
 
 @Component({
   selector: 'page-societies',
@@ -8,11 +11,12 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class SocietiesPage {
   categories: any;
   societiesReturn: any;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private datastore: Datastore) {
 }
 returnSocieties = [{name: '', categorie: ''}];
 societies =
-[{name:"Wikibox",categorie:"Bijoux",checked:false},
+[
+{name:"Wikibox",categorie:"Bijoux",checked:false},
 {name:"Eazzy",categorie:"Parfum & Bougie",checked:false},
 {name:"Lazz",categorie:"Confiserie & Chocolat",checked:false},
 {name:"Yodel",categorie:"Bijoux",checked:false},
@@ -61,7 +65,8 @@ societies =
 {name:"Linklinks",categorie:"Loisir Créatif & Jeux",checked:false},
 {name:"Linktype",categorie:"Soins & Beauté",checked:false},
 {name:"Camimbo",categorie:"Cuisine & Terroir",checked:false},
-{name:"Realbuzz",categorie:"Maison & Déco",checked:false}];
+{name:"Realbuzz",categorie:"Maison & Déco",checked:false}
+];
 
 ngOnInit() {
   if (this.navParams.get("societies") != "Toute les sociétés")
@@ -78,22 +83,21 @@ ngOnInit() {
        }
     }
   }
-  if (this.navParams.get("categories")!= "Toutes les Catégories")
+  console.log(this.navParams.get("categories")[0].name);
+  if (this.navParams.get("categories")[0].name != "Toutes les Catégories")
+  {
   this.categories = this.navParams.get("categories");
-  else
-  this.categories = [
-   "Bien être & Diététique",
-   "Bijoux",
-   "Confiserie & Chocolat",
-   "Cuisine & Terroir",
-   "Lingerie",
-   "Loisir Créatif & Jeux",
-   "Maison & Déco",
-   "Parfum & Bougie",
-   "Prêt à Porter & Accessoires",
-   "Puériculture",
-   "Séduction",
-   "Soins & Beauté"];
+  for(let category of this.categories)
+    {
+      this.datastore.findRecord(Category, category.id, {include: 'companies'}).subscribe(data=>console.log(data));
+    }
+  }
+  else {
+    this.datastore.findAll(Category, {}).subscribe(data=>{
+      this.categories = data.getModels();
+      console.log(this.categories);
+    });
+ }
 }
 
 updateSocieties(event, type) {

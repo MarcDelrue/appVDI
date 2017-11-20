@@ -7,22 +7,33 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-card padding *ngFor='let test of all'>
+  <ion-refresher (ionRefresh)="findOpenDoor($event)">
+    <ion-refresher-content
+    pullingText="Tirer pour rafraichir..."
+    refreshingText="En raffraichissement...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-card padding *ngFor='let event of events'>
     <div class="threebutton">
     <div style="text-align: left">
       <ion-icon name="ios-pin"></ion-icon>
-      <label>62 Tilques</label>
+      <label>{{event.city}}</label>
     </div>
     <div style="text-align: right">
       <ion-icon name="md-calendar"></ion-icon>
-      <label>03/09/17</label>
+      <label>{{event.date | date: "dd/MM/yy"}}</label>
     </div>
   </div>
-  <img *ngIf='showbanner' src='assets/img/selfie.jpg'>
+  <div *ngIf='event.showbanner'>
+  <img src='assets/img/selfie.jpg'>
+  <label>Description: </label>
+  <div>{{event.description}}</div>
+  </div>
   <hr>
   <div class="row threebutton">
-      <button ion-fab class="invitbutton" (click)='showbanner = !showbanner'><ion-icon name="ios-information" style="font-size: 40px"></ion-icon></button>
+      <button ion-fab class="invitbutton" (click)='event.showbanner = !event.showbanner'><ion-icon name="ios-information" style="font-size: 40px"></ion-icon></button>
       <button ion-fab class="invitbutton" (click)='switchFavo()'><ion-icon name={{isFavo}}></ion-icon></button>
   </div>
   </ion-card>
 </ion-content>
+<img src="assets/img/Wedges.gif" class="loading" *ngIf="loading">
